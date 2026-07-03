@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asl Mebellar - Premium Onlayn Mebel Do'koni</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="logo-btn">
+        <span class="logo-accent">Asl</span> Mebellar
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-link active" data-view="home">Bosh sahifa</a>
+        <a href="#" class="nav-link" data-view="catalog">Katalog</a>
+        <a href="#" class="nav-link" data-view="custom">Buyurtma berish</a>
+        <a href="#" class="nav-link" data-view="contact">Aloqa</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+998882777771" class="phone-link">
+          <i class="fa-solid fa-phone"></i>
+          <span>+998 88 277 77 71</span>
+        </a>
+        <button class="cart-trigger" id="cart-toggle" aria-label="Savat">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+        <button class="mobile-menu-trigger" id="mobile-menu-toggle" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <a href="#" class="logo">
+          <span class="logo-accent">Asl</span> Mebellar
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mobile-links">
+        <a href="#" class="mobile-nav-link active" data-view="home">Bosh sahifa</a>
+        <a href="#" class="mobile-nav-link" data-view="catalog">Katalog</a>
+        <a href="#" class="mobile-nav-link" data-view="custom">Buyurtma berish</a>
+        <a href="#" class="mobile-nav-link" data-view="contact">Aloqa</a>
+      </div>
+      <div class="mobile-contact-info">
+        <p><i class="fa-solid fa-map-pin"></i> Guliston sh., Yangi bozor yo'nalishida, 11-maktab yaqinida</p>
+        <p><i class="fa-solid fa-clock"></i> Har kuni 08:00 - 00:00</p>
+        <p><i class="fa-solid fa-phone"></i> +998 88 277 77 71</p>
+        <p><i class="fa-solid fa-phone"></i> +998 87 322 00 66</p>
+        <p><i class="fa-brands fa-instagram"></i> @Asl.Mebellar</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+
+    <!-- HOME VIEW -->
+    <section id="view-home" class="page-view active">
+      <!-- Hero Banner -->
+      <div class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <span class="hero-subtitle">Premium sifat va o'ziga xos estetika</span>
+            <h1 class="hero-title">Uyingiz uchun Haqiqiy <span>Asl Mebellar</span></h1>
+            <p class="hero-description">Tayyor premium mebellarni xarid qiling yoki o'z uyingiz o'lchamlariga mos ravishda shaxsiy dizayn asosida buyurtma bering.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="switchView('catalog')">Katalogni ko'rish</button>
+              <button class="btn btn-outline" onclick="switchView('custom')">Buyurtma berish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promos / Features Section -->
+      <div class="promo-section">
+        <div class="container grid-promos">
+          <div class="promo-card">
+            <div class="promo-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <div class="promo-info">
+              <h3>Qulay Bo'lib To'lash</h3>
+              <p>Hujjatlarsiz va boshlang'ich to'lovsiz, 12 oygacha kredit variantlari mavjud.</p>
+            </div>
+          </div>
+          <div class="promo-card">
+            <div class="promo-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="promo-info">
+              <h3>Bepul Yetkazib Berish</h3>
+              <p>Guliston shahar bo'ylab professional yetkazish va yig'ib berish xizmati.</p>
+            </div>
+          </div>
+          <div class="promo-card">
+            <div class="promo-icon"><i class="fa-solid fa-hammer"></i></div>
+            <div class="promo-info">
+              <h3>Buyurtma Asosida Yasash</h3>
+              <p>Siz xohlagan o'lchamlar, materiallar va ranglar asosida individual mebellar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Categories Grid -->
+      <div class="categories-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Kategoriyalar bo'yicha saralash</h2>
+            <div class="accent-line"></div>
+          </div>
+          <div class="categories-grid">
+            <div class="category-card" onclick="filterCatalogByCategory('yotoqxona')">
+              <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80')"></div>
+              <div class="category-overlay"></div>
+              <div class="category-name">Yotoqxona Mebellari</div>
+            </div>
+            <div class="category-card" onclick="filterCatalogByCategory('mehmonxona')">
+              <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80')"></div>
+              <div class="category-overlay"></div>
+              <div class="category-name">Mehmonxona Mebellari</div>
+            </div>
+            <div class="category-card" onclick="filterCatalogByCategory('oshxona')">
+              <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80')"></div>
+              <div class="category-overlay"></div>
+              <div class="category-name">Oshxona Mebellari</div>
+            </div>
+            <div class="category-card" onclick="switchView('custom')">
+              <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80')"></div>
+              <div class="category-overlay"></div>
+              <div class="category-name">Buyurtma Asosida Yasash</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info/About Section -->
+      <div class="about-brief-section">
+        <div class="container about-brief-grid">
+          <div class="about-brief-text">
+            <span class="brief-sub">Nega bizni tanlashadi?</span>
+            <h2>"Asl Mebellar" do'koni – Sizning qulayligingiz bizning ustuvor vazifamizdir</h2>
+            <p>Biz ko'p yillardan buyon mijozlarimizga o'ziga xos sifatga ega yotoqxona garniturlari, mehmonxona mebellari, yumshoq mebellar va oshxona to'plamlarini taqdim etib kelmoqdamiz. Do'konimizda tayyor mebellarni xarid qilishingiz yoki uyingiz dizayniga mos keladigan o'lchamlarda mebellarni buyurtma asosida yasatishingiz mumkin.</p>
+            <ul class="features-list">
+              <li><i class="fa-solid fa-circle-check"></i> Yuqori sifatli materiallar va mustahkam furnitura</li>
+              <li><i class="fa-solid fa-circle-check"></i> 0% foizli bo'lib to'lash variantlari</li>
+              <li><i class="fa-solid fa-circle-check"></i> Har qanday murakkablikdagi dizaynlarni yasash</li>
+            </ul>
+            <button class="btn btn-primary" onclick="switchView('catalog')">Katalogni ochish</button>
+          </div>
+          <div class="about-brief-images">
+            <div class="img-frame-large" style="background-image: url('https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="img-frame-small" style="background-image: url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80')"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG VIEW -->
+    <section id="view-catalog" class="page-view">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-sub">Premium kolleksiya</span>
+          <h2>Bizning Mahsulotlar</h2>
+          <div class="accent-line"></div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="catalog-filters">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="catalog-search" placeholder="Mebel qidirish...">
+          </div>
+          
+          <div class="filter-categories" id="filter-categories-container">
+            <button class="filter-btn active" data-category="all">Barchasi</button>
+            <button class="filter-btn" data-category="yotoqxona">Yotoqxona</button>
+            <button class="filter-btn" data-category="mehmonxona">Mehmonxona</button>
+            <button class="filter-btn" data-category="oshxona">Oshxona</button>
+            <button class="filter-btn" data-category="oshxona-stul">Stol-stullar</button>
+            <button class="filter-btn" data-category="koridor">Koridor & Shkaf</button>
+          </div>
+
+          <div class="sort-box">
+            <select id="catalog-sort" aria-label="Saralash">
+              <option value="default">Saralash (Standart)</option>
+              <option value="price-asc">Narx: O'sish tartibida</option>
+              <option value="price-desc">Narx: Kamayish tartibida</option>
+              <option value="name-asc">Nom bo'yicha: A - Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="products-grid">
+          <!-- Will be generated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDER VIEW -->
+    <section id="view-custom" class="page-view">
+      <div class="container custom-order-container">
+        <div class="custom-grid">
+          
+          <!-- Custom Order Details Info -->
+          <div class="custom-info-pane">
+            <span class="custom-sub">O'zingizga moslashtiring</span>
+            <h2>Individual Buyurtma Berish</h2>
+            <div class="accent-line"></div>
+            <p>Do'konimizda sotuvda mavjud mebellardan tashqari, uyingizning o'ziga xos o'lchamlariga va dizayniga mos keluvchi mebellarni yasab beramiz. Buning uchun siz quyidagi shaklni to'ldirishingiz kerak:</p>
+            
+            <div class="step-guide">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div>
+                  <h4>Mebel Turini Tanlang</h4>
+                  <p>Yotoqxona, Oshxona, Garderob yoki maxsus yumshoq mebel.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div>
+                  <h4>O'lcham va Materiallar</h4>
+                  <p>O'lchamlarni kiriting, material turini (DSP, MDF, Akril yoki yog'och) va matolarni belgilang.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div>
+                  <h4>Telegram orqali kelishuv</h4>
+                  <p>Buyurtma berganingizdan so'ng administratorimiz siz bilan bog'lanib, loyihani batafsil kelishib oladi.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-features">
+              <div class="feat-badge"><i class="fa-solid fa-shield-halved"></i> 2 Yil Kafolat</div>
+              <div class="feat-badge"><i class="fa-solid fa-pencil"></i> Bepul 3D Loyiha</div>
+              <div class="feat-badge"><i class="fa-solid fa-clock"></i> 7-15 Kun Muddat</div>
+            </div>
+          </div>
+
+          <!-- Custom Order Form -->
+          <div class="custom-form-pane">
+            <form id="custom-order-form">
+              <h3>Buyurtma Shakli</h3>
+              
+              <div class="form-group">
+                <label for="custom-name">Ism va Familiyangiz *</label>
+                <input type="text" id="custom-name" required placeholder="Ismingizni kiriting">
+              </div>
+
+              <div class="form-group">
+                <label for="custom-phone">Telefon Raqamingiz *</label>
+                <input type="tel" id="custom-phone" required placeholder="+998 (__) ___-__-__" value="+998">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="custom-type">Mebel Turi *</label>
+                  <select id="custom-type" required>
+                    <option value="" disabled selected>Tanlang</option>
+                    <option value="Yotoqxona Mebeli">Yotoqxona garnituri</option>
+                    <option value="Mehmonxona Mebeli">Mehmonxona mebeli</option>
+                    <option value="Oshxona Mebeli">Oshxona garnituri</option>
+                    <option value="Shkaf / Garderob">Shkaf yoki Garderob</option>
+                    <option value="Yumshoq mebel / Divan">Yumshoq mebel (Divan, Kreslo)</option>
+                    <option value="Boshqa mebel">Boshqa maxsus mebel</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="custom-dimensions">O'lchamlari (Uzunlik x Kenglik x Balandlik)</label>
+                  <input type="text" id="custom-dimensions" placeholder="Masalan: 3m x 2m x 2.4m">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="custom-material">Material Turi</label>
+                  <select id="custom-material">
+                    <option value="" selected>Tanlanmagan</option>
+                    <option value="Laminatlangan DSP (Rossiya)">Laminatlangan DSP (Rossiya)</option>
+                    <option value="MDF (Bo'yalgan / Akril)">MDF (Bo'yalgan / Akril)</option>
+                    <option value="Tabiiy Yog'och (Eman, Qarag'ay)">Tabiiy Yog'och (Eman, Qarag'ay)</option>
+                    <option value="MDF + Shpon">MDF + Shpon</option>
+                    <option value="Yumshoq matoli (Turkiya/Xitoy)">Yumshoq matoli (Turkiya/Xitoy)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="custom-color">Rangi / Rangi kodi</label>
+                  <input type="text" id="custom-color" placeholder="Masalan: To'q jigarrang, Krem">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="custom-details">Qo'shimcha istak va tafsilotlar</label>
+                <textarea id="custom-details" rows="4" placeholder="Mebelning dizayni, funksionalligi yoki maxsus istaklaringizni yozib qoldiring..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Buyurtmani Yuborish <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT VIEW -->
+    <section id="view-contact" class="page-view">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-sub">Biz bilan bog'lanish</span>
+          <h2>Aloqa va Manzilimiz</h2>
+          <div class="accent-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Information Card -->
+          <div class="contact-info-card">
+            <h3>"Asl Mebellar" Do'koni</h3>
+            <p class="contact-desc">Mebel tanlashda yoki buyurtma berishda yordam kerakmi? Biz bilan bog'laning yoki do'konimizga tashrif buyuring.</p>
+            
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-text">
+                  <h4>Manzil:</h4>
+                  <p>Guliston shahar, Yangi bozor tomon yoʻnalishda, 11-maktab yaqinida.</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-text">
+                  <h4>Telefon raqamlar:</h4>
+                  <p><a href="tel:+998882777771">+998 88 277 77 71</a></p>
+                  <p><a href="tel:+998873220066">+998 87 322 00 66</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="info-text">
+                  <h4>Ish vaqti:</h4>
+                  <p>Dushanba - Yakshanba: 08:00 dan 00:00 gacha</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-brands fa-instagram"></i></div>
+                <div class="info-text">
+                  <h4>Instagram profil:</h4>
+                  <p><a href="https://instagram.com/Asl.Mebellar" target="_blank">@Asl.Mebellar</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://instagram.com/Asl.Mebellar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+          </div>
+
+          <!-- Interactive Location / Map -->
+          <div class="contact-map">
+            <div class="map-container">
+              <!-- Google Maps Iframe pointing to Guliston, Uzbekistan with Yangi Bozor / School 11 context -->
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12089.479577712169!2d68.7844073385731!3d40.49033306915152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b2067d5d28bbf1%3A0x6e2f4ea7c3ee11a5!2sGuliston%2C%20Sirdaryo%20Region%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1719999000000!5m2!1sen!2s" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Asl Mebellar Joylashuvi">
+              </iframe>
+            </div>
+            <div class="map-label">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Yangi bozor yo'nalishida, 11-maktab ro'parasida / yaqinida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Cart Sidebar / Modal -->
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Sizning Savatchangiz</h3>
+        <button class="cart-close" id="cart-close-btn" aria-label="Yopish">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-body" id="cart-items-container">
+        <!-- Will be populated dynamically by app.js -->
+      </div>
+
+      <!-- Checkout Pane -->
+      <div class="cart-footer" id="cart-footer-pane">
+        <div class="cart-total">
+          <span>Umumiy Summa:</span>
+          <span id="cart-total-price">0 so'm</span>
+        </div>
+        
+        <div class="checkout-form-container">
+          <h4>Buyurtmani Tasdiqlash</h4>
+          <form id="checkout-form">
+            <div class="form-group-small">
+              <label for="checkout-name">Ism va Familiya *</label>
+              <input type="text" id="checkout-name" required placeholder="Ismingiz">
+            </div>
+            <div class="form-group-small">
+              <label for="checkout-phone">Telefon Raqami *</label>
+              <input type="tel" id="checkout-phone" required placeholder="+998 (__) ___-__-__" value="+998">
+            </div>
+            <div class="form-group-small">
+              <label for="checkout-address">Manzilingiz *</label>
+              <input type="text" id="checkout-address" required placeholder="Guliston shahar, Ko'cha, Uy raqami">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block checkout-submit-btn">Buyurtma berish <i class="fa-solid fa-check"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo footer-logo">
+          <span class="logo-accent">Asl</span> Mebellar
+        </a>
+        <p>Guliston shahridagi zamonaviy va premium sifatli mebellar do'koni. Uyingiz uchun eng shinam muhitni yaratamiz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tezkor Linklar</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="switchView('home')">Bosh sahifa</a></li>
+          <li><a href="#" onclick="switchView('catalog')">Mebellar Katalogi</a></li>
+          <li><a href="#" onclick="switchView('custom')">Buyurtma asosida yasash</a></li>
+          <li><a href="#" onclick="switchView('contact')">Aloqa va Xarita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Xizmatlarimiz</h4>
+        <ul class="footer-links">
+          <li><span>Tayyor mebellar sotuvi</span></li>
+          <li><span>Buyurtma asosida mebel tayyorlash</span></li>
+          <li><span>0% Foizli bo'lib to'lash (Kredit)</span></li>
+          <li><span>Guliston bo'ylab yetkazib berish</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ma'lumotlar</h4>
+        <p><i class="fa-solid fa-map-pin"></i> Guliston shahar, Yangi bozor tomon, 11-maktab yaqinida.</p>
+        <p><i class="fa-solid fa-phone"></i> +998 88 277 77 71</p>
+        <p><i class="fa-solid fa-clock"></i> Har kuni 08:00 dan 00:00 gacha</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Asl Mebellar. Barcha huquqlar himoyalangan.</p>
+        <p>Created with <i class="fa-solid fa-heart" style="color: #D4AF37;"></i> for Guliston</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Frontend Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
